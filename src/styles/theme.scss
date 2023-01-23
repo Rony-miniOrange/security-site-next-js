@@ -1,0 +1,29 @@
+// $theme: {
+//     .light: {
+//         $boxShadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.16),
+//         7px 7px 20px 0px rgba(0, 0, 0, 0.10),
+//         4px 4px 5px 0px rgba(0, 0, 0, 0.10);
+//         $primaryColor: #EB5424;
+//         $secondaryColor: #F7BC83;
+//         $themeBg: #fff;
+//     }
+// }
+
+// $boxShadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.16), 7px 7px 20px 0px rgba(0, 0, 0, 0.10), 4px 4px 5px 0px rgba(0, 0, 0, 0.10);
+// $primaryColor: #EB5424;
+// $secondaryColor: #F7BC83;
+// $themeBg: #fff;
+// $fontFamily: "DM Sans"
+
+$theme-colors: (
+  'primary': #EB5424,
+  'secondary': #F7BC83,
+  'success': #1ce1ac,
+  'info': #ff7d50,
+  'warning': #ffbe0b,
+  'danger': #ff007f,
+  'light': #c0ccda,
+  'dark': #001738,
+);
+
+@import '/node_modules/bootstrap/scss/bootstrap.scss';

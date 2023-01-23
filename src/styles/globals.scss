@@ -1,0 +1,50 @@
+@import 'theme';
+
+// .mo-anchor {
+// 	color: $primaryColor;
+
+// 	&:hover {
+// 		color: $primaryColor;
+// 		text-decoration: none;
+// 	}
+// }
+
+// CREATES CLASSES width-1 to width-100 for all the percentages. can be accessed as width-1, width-7, width-50 and so on.
+@media screen and (min-width: 768px) {
+	@for $i from 1 through 100 {
+		$width: 1% * $i;
+		.width-#{$i} {
+			width: $width;
+		}
+	}
+}
+
+.custom-badge-primary-outlined {
+	background-color: rgba(235, 84, 36, 0.05);
+	color: rgb(235, 84, 36) !important;
+}
+
+.custom-badge-success-outlined {
+	background-color: rgb(37, 193, 111, 0.05);
+	color: rgb(37, 193, 111) !important;
+}
+
+.custom-badge-default-outlined {
+	background-color: rgba(20, 44, 92, 0.051);
+	color: rgb(21, 44, 91) !important;
+}
+
+.custom-badge-primary {
+	color: rgb(255, 255, 255) !important;
+	background-color: rgb(235, 84, 36);
+}
+
+.custom-badge-success {
+	color: rgb(255, 255, 255) !important;
+	background-color: rgb(37, 193, 111);
+}
+
+.custom-badge-default {
+	color: rgb(255, 255, 255) !important;
+	background-color: rgb(21, 44, 91);
+}
