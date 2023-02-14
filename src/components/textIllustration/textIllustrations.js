@@ -1,10 +1,9 @@
 import Head from 'next/head'
 import ReactDOM from "react-dom";
-import styles from '@/styles/Home.module.css'
+import styles from 'textIllustration.module.scss'
 import {Button, Container , Row, Col} from 'react-bootstrap';  
 import React, { useEffect, useState } from "react";
 import Tabs from './tabs';
-import "@fontsource/poppins";
 
 
 const getFormattedPrice = (price) => `$${price.toFixed(2)}`;
