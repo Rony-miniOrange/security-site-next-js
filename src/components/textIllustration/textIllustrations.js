@@ -1,26 +1,26 @@
 import Head from 'next/head'
 import ReactDOM from "react-dom";
-import styles from './textIllustration.module.scss'
-import 'bootstrap/dist/css/bootstrap.min.css';  
+import styles from '@/styles/Home.module.css'
 import {Button, Container , Row, Col} from 'react-bootstrap';  
 import React, { useEffect, useState } from "react";
-import {useForm} from "react-hook-form";
-import {
-  FormControl,
-  FormLabel,
-  FormControlLabel,
-  FormGroup,
-  Checkbox,
-  Box
-} from "@mui/material";
 import Tabs from './tabs';
 import "@fontsource/poppins";
 
-const formOptions = ["Managed Service Provider", "Distributor / Value Added Reseller"];
+
+const getFormattedPrice = (price) => `$${price.toFixed(2)}`;
+const options = [
+  {
+    name: "Managed Service Provider"
+  },
+  {
+    name: "Distributer / Value-Added Reseller"
+  }
+];
 
 export default function Home() {
-  const { register, setValue, handleSubmit } = useForm();
-  return (
+  const [total, setTotal] = useState(0);
+
+    return (
     <>
     <Row className='row-align'>
       <Col className='textStyle'>
@@ -29,35 +29,36 @@ export default function Home() {
     </p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
 </p>
-<FormControl fullWidth component="fieldset" margin="normal">
-          <FormGroup aria-label="Temas" row={false}>
-            {formOptions.map((option, i) => (
-              <FormControlLabel
-                key={option}
-                control={
+<ul className="options-list">
+        {options.map(({ name}, index) => {
+          return (
+            <li key={index}>
+              <div className="options-list-item">
+                <div className="left-section">
                   <input
-                    type="checkbox" 
-                    name={`nativeThemes[${i}]`}
-                    value={option}
-                    //  ref={register}
+                    type="checkbox"
+                    id={`custom-checkbox-${index}`}
+                    name={name}
+                    value={name}
                   />
-                }
-                label={option}
-              />
-            ))}
-          </FormGroup>
-        </FormControl>
+                  <label htmlFor={`custom-checkbox-${index}`}>{name}</label>
+                </div>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
         <div>
       <Button className='action-btn'>Action</Button>
       </div>
 </Col>
-<Col className='col-align'>
+<Col style={{margin:'2rem 0rem 0rem 0rem'}}>
  <img src="https://cdn.discordapp.com/attachments/945949843724075038/1070236838217908314/Rectangle_164.png" width="75%" alt="sample"/>
 </Col>
 </Row>
 
-<Row className='row-align'>
-<Col className='col-alignment'>
+<Row className='row-align' style={{paddingTop:'8rem', paddingLeft:'2rem'}}>
+<Col style={{margin:'5rem 0rem 0rem 0rem'}}>
  <img src="https://cdn.discordapp.com/attachments/945949843724075038/1070236838217908314/Rectangle_164.png" width="75%" alt="sample"/>
 </Col>
       <Col className='textStyle'>
