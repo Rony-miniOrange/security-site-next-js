@@ -1,0 +1,27 @@
+.displaylinebreak {
+    white-space: pre-line;
+}
+.circle{
+	border-radius: 50%;
+	background: black;
+	height: 35px;
+	width: 35px;
+	display: block;
+}
+.reviewquote{
+	font-size: 2rem;
+	color: white;
+}
+.quotediv1{
+	background: linear-gradient(to bottom, white 50%, #94C2FF 50%);
+}
+.quotediv2{
+	background: linear-gradient(to bottom, white 50%, #808191 50%);
+}
+.blockquote {
+	position: absolute;
+  top: 0;
+  content: "\f10d";
+  font-size: 100px !important;
+  color:white;
+}
