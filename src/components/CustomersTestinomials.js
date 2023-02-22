@@ -147,16 +147,3 @@ const CustomersTestinomials = (props) => {
 };  
 
 export default CustomersTestinomials;
-
-{/* <div className="customer-logos d-flex mb-5">
-        {
-        logos && logos.map((logo) => 
-        {   
-            return(
-                <div className="logo mx-3 px-5">
-                <Image src = {logo.logo_url} alt={logo.id} height={80} width={110}/>
-                </div>
-            )
-        })
-    }
-        </div> */}
