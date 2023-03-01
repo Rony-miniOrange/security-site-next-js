@@ -3,7 +3,7 @@ import {FaStar} from 'react-icons/fa';
 import { FaRegStar } from 'react-icons/fa';
 import Image from "next/image";
 import CustomerTestinomialSectionCss from "./CustomerTestinomialSectionCss.module.scss"
-const GetRating = (props) => {
+export const GetRating = (props) => {
     const[rating,setRating] = useState(null);
     useEffect(() =>{
         setRating(props.ratings);
@@ -12,10 +12,10 @@ const GetRating = (props) => {
     const ratingStars = []
     ratingArray.forEach((ratingArrayElement,index) =>{
         if(index<rating){
-            ratingStars.push(<div className="px-1"><FaStar color="orange" size={15} /></div>)
+            ratingStars.push(<div key={index} className="px-1" style={{"height":"fit-content"}}><FaStar color="orange" size={15} /></div>)
         }
         else{
-            ratingStars.push(<div className="px-1"><FaRegStar color="orange" size={15} /></div>)
+            ratingStars.push(<div key={index} className="px-1" style={{"height":"fit-content"}}><FaRegStar color="orange" size={15} /></div>)
         }
     })
     return(
