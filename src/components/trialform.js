@@ -1,7 +1,7 @@
 import { BsCheck2 } from "react-icons/bs";
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import trialFormCss from './trialform.module.scss';
+import trialFormCss from './TrialForm.module.scss';
 
 export default function TrialForm() {
     return (

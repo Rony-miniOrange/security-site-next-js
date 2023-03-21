@@ -2,7 +2,6 @@ import Slider from '@mui/material/Slider';
 import { useEffect, useState } from "react";
 import Box from '@mui/material/Box';
 import styles from '../CommonComponents/pricing.module.scss';
-import Table from 'react-bootstrap/Table';
 import { styled } from '@mui/material/styles';
 import PriceCard from './PriceCard';
 
@@ -138,7 +137,7 @@ function Multiple({ pricingFeatures }) {
             </div>
             <div className={`${styles.scrollTable} container-fluid`}>
                 {compare &&
-                    <Table striped style={{ width: "96%", border: "1px solid #fff" }} className="mt-5">
+                    <table className="table table-stripped mt-5">
                         <thead>
                             <tr>
                                 <br />
@@ -150,7 +149,7 @@ function Multiple({ pricingFeatures }) {
                         <tbody className='mt-4'>
                             {data}
                         </tbody>
-                    </Table>
+                    </table>
                 }
             </div>
 

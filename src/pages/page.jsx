@@ -1,12 +1,12 @@
 "use client"; // this is a client component
-import { Inter } from '@next/font/google'
-import styles from './page.module.scss'
+import { Inter } from '@next/font/google';
+import styles from './page.module.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState} from "react";
 import Single from "../components/Single";
 import Multiple from "../components/Multiple";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 
 const inter = Inter({ subsets: ['latin'] })
