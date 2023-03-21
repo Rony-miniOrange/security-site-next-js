@@ -1,3 +1,4 @@
+import TrialForm from '@/components/trialform';
 import UniqueSolutions from '@/components/UniqueSolutions/UniqueSolutions';
 import { DM_Sans } from '@next/font/google';
 import { GoKey } from "react-icons/go";
@@ -284,6 +285,10 @@ export default function Home() {
       
       <div className="container-fluid my-5">
         <UniqueSolutions uniqueSolutionItems={uniqueSolutionItems} />
+      </div>
+      
+      <div className="container-fluid my-5">
+        <TrialForm />
       </div>
     </>
 
