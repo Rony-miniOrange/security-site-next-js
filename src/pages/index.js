@@ -1,125 +1,296 @@
-import Head from 'next/head'
-import Image from 'next/image'
-// import { Inter } from '@next/font/google'
+import TrialForm from '@/components/trialform';
+import UniqueSolutions from '@/components/UniqueSolutions/UniqueSolutions';
 import { DM_Sans } from '@next/font/google';
-import styles from '@/styles/Home.module.css'
+import { GoKey } from "react-icons/go";
+import AddonSection from "../components/AddonSection";
 
 // const inter = Inter({ subsets: ['latin'] });
 const inter = DM_Sans({ subsets: ['latin'], weight: ['400'] });
 
+/** EXAMPLE DATA
+ * 
+ * ADDONS SECTION WITH BADGE AND BUTTON ACTIONS
+ * 
+ * const addOnsIntegrationWithBadge = [
+		{
+			title: "Ultimate Member SMS Notification",
+			description: "Allows your website to send custom SMS Notifications to the customer/admins on new user registrations.",
+			action: {
+				buttonTitle: "Contact Us",
+				buttonAction: "https://google.com"
+			},
+			badge: {
+				title: "Featured",
+				type: "primary"
+			}
+		},
+		{
+			title: "wooCommerce SMS Notification",
+			description: (<p>Allows your website to send custom SMS Notifications to the customer/admins on new user registrations. <a href='https://miniorange.com'>Read more</a></p>),
+			price: "19 $",
+			action: {
+				buttonTitle: "Buy Now",
+				buttonAction: () => {alert("Go To buy page");}
+			},
+			badge: {
+				title: "Recomended",
+				type: "success-outlined"
+			}
+		},
+		{
+			title: "Ultimate Member Password Reset Over OTP",
+			description: (<p>Allows your website to send custom SMS Notifications to the customer/admins on new user registrations. <a href='https://miniorange.com'>Read More</a></p>),
+			price: "29 $",
+			action: {
+				buttonTitle: "Custom Action",
+				buttonAction: () => {alert("Custom Action Called");}
+			},
+		}
+	];
+ * 
+ */
+
 export default function Home() {
-  return (
+  const cardType = "WITH_BADGE_ACTIONS";
+	// const cardType = "WITH_ICONS";
+	// const cardType = "NO_PRICE";
+
+	
+	const addOnsIntegrationWithBadge = [
+		{
+			title: "Ultimate Member SMS Notification",
+			description: "Allows your website to send custom SMS Notifications to the customer/admins on new user registrations.",
+			action: {
+				buttonTitle: "Contact Us",
+				buttonAction: "https://google.com"
+			},
+			badge: {
+				title: "Featured",
+				type: "primary-outlined"
+			}
+		},
+		{
+			title: "WooCommerce SMS Notification",
+			description: (<>Allows your website to send custom SMS Notifications to the customer/admins on new user registrations. <a href='https://miniorange.com'>Read more</a></>),
+			price: "19 $",
+			action: {
+				buttonTitle: "Buy Now",
+				buttonAction: () => { alert("Go To buy page"); }
+			},
+			badge: {
+				title: "Recomended",
+				type: "success-outlined"
+			}
+		},
+		{
+			title: "Ultimate Member Password Reset Over OTP",
+			description: (<>Allows your website to send custom SMS Notifications to the customer/admins on new user registrations. <a href='https://miniorange.com'>Read More</a></>),
+			price: "29 $",
+			action: {
+				buttonTitle: "Custom Action",
+				buttonAction: () => { alert("Custom Action Called"); }
+			},
+		}
+	];
+
+	const features = [
+		{
+			title: "Ultimate Member SMS Notification",
+			description: "Allows your website to send custom SMS Notifications to the customer/admins on new user registrations.",
+			action: {
+				buttonTitle: "Contact Us",
+				buttonAction: "https://google.com"
+			},
+			icon: <GoKey className="fs-3" />
+		},
+		{
+			title: "WooCommerce SMS Notification",
+			description: (<>Allows your website to send custom SMS Notifications to the customer/admins on new user registrations. <a className="" href='https://miniorange.com'>Read more</a></>),
+			price: "19 $",
+			action: {
+				buttonTitle: "Buy Now",
+				buttonAction: () => { alert("Go To buy page"); }
+			},
+			icon: <GoKey className="fs-3" />
+		},
+		{
+			title: "Ultimate Member Password Reset Over OTP",
+			description: (<>Allows your website to send custom SMS Notifications to the customer/admins on new user registrations. <a href='https://miniorange.com'>Read More</a></>),
+			price: "29 $",
+			action: {
+				buttonTitle: "Custom Action",
+				buttonAction: () => { alert("Custom Action Called"); }
+			},
+			icon: <GoKey className="fs-3" />
+		},
+		{
+			title: "Ultimate Member Password Reset Over OTP",
+			description: (<>Allows your website to send custom SMS Notifications to the customer/admins on new user registrations. <a href='https://miniorange.com'>Read More</a></>),
+			price: "29 $",
+			action: {
+				buttonTitle: "Custom Action",
+				buttonAction: () => { alert("Custom Action Called"); }
+			},
+			icon: <GoKey className="fs-3" />
+		}
+	];
+	
+	const addOnsIntegrationWithIcons = [
+		{
+			title: "Ultimate Member SMS Notification",
+			description: "Allows your website to send custom SMS Notifications to the customer/admins on new user registrations.",
+			action: {
+				buttonTitle: "Contact Us",
+				buttonAction: "https://google.com"
+			},
+			icon: <GoKey className="fs-3" />
+		},
+		{
+			title: "WooCommerce SMS Notification",
+			description: (<>Allows your website to send custom SMS Notifications to the customer/admins on new user registrations. <a className="" href='https://miniorange.com'>Read more</a></>),
+			price: "19 $",
+			action: {
+				buttonTitle: "Buy Now",
+				buttonAction: () => { alert("Go To buy page"); }
+			},
+			icon: <GoKey className="fs-3" />
+		},
+		{
+			title: "Ultimate Member Password Reset Over OTP",
+			description: (<>Allows your website to send custom SMS Notifications to the customer/admins on new user registrations. <a href='https://miniorange.com'>Read More</a></>),
+			price: "29 $",
+			action: {
+				buttonTitle: "Custom Action",
+				buttonAction: () => { alert("Custom Action Called"); }
+			},
+			icon: <GoKey className="fs-3" />
+		},
+		{
+			title: "Ultimate Member Password Reset Over OTP",
+			description: (<>Allows your website to send custom SMS Notifications to the customer/admins on new user registrations. <a href='https://miniorange.com'>Read More</a></>),
+			price: "29 $",
+			action: {
+				buttonTitle: "Custom Action",
+				buttonAction: () => { alert("Custom Action Called"); }
+			},
+			icon: <GoKey className="fs-3" />
+		}
+	];
+
+	const addOnsIntegrationWithNoPrice = [
+		{
+			title: "Ultimate Member SMS Notification",
+			guides:{
+				videoGuide: "https://youtu.be/6XGUvlvjeUQ",
+				setupGuide: "https://plugins.miniorange.com/guide-to-setup-password-sync-with-ldap-add-on"
+			},
+			icon: <GoKey className="fs-3" />
+		},
+		{
+			title: "WooCommerce SMS Notification",
+			guides:{
+				videoGuide: "https://youtu.be/6XGUvlvjeUQ",
+			},
+			icon: <GoKey className="fs-3" />
+		},
+		{
+			title: "Ultimate Member Password Reset Over OTP",
+			guides:{
+				setupGuide: "https://plugins.miniorange.com/guide-to-setup-password-sync-with-ldap-add-on"
+			},
+			icon: <GoKey className="fs-3" />
+		},
+		{
+			title: "Ultimate Member Password Reset Over OTP",
+			icon: <GoKey className="fs-3" />
+		}
+	];
+
+  const uniqueSolutionItems = [
+    {
+      img: "./UniqueSolutionImages/img_0.png",
+      title: "Create a website using Html CSS and JavaScript",
+      text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab eius molestias, quasi, quam omnis magnam impedit hic totam repudiandae reiciendis voluptate inventore nisi quidem.",
+      action: {
+        text: "Go somewhere >>",
+        dest: 'https://google.com'
+      },
+    },
+    {
+      img: "./UniqueSolutionImages/img_0.png",
+      title: "Complete portfolio website tutorial",
+      text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab eius molestias, quasi, quam omnis magnam impedit hic totam repudiandae reiciendis voluptate inventore nisi quidem.",
+      action: {
+        text: "Go somewhere >>",
+        dest: () => {alert("Clicked")}
+      },
+    },
+    {
+      img: "/UniqueSolutionImages/img_0.png",
+      title: "Bootstrap 5 Complete tutorial",
+      text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab eius molestias, quasi, quam omnis magnam impedit hic totam repudiandae reiciendis voluptate inventore nisi quidem.",
+      action: {
+        text: "Go somewhere >>",
+      },
+    },
+  ];
+
+	
+
+	const extraAddons = {
+		columns: 3,
+		data:[
+			{
+				title: "Ultimate Member SMS Notification",
+				icon: <GoKey className="fs-6" />
+			},
+			{
+				title: "WooCommerce SMS Notification",
+				icon: <GoKey className="fs-6" />
+			},
+			{
+				title: "Ultimate Member Password Reset Over OTP",
+				icon: <GoKey className="fs-6" />
+			},
+			{
+				title: "Ultimate Member Password Reset Over OTP",
+				icon: <GoKey className="fs-6" />
+			},
+			{
+				title: "Ultimate Member SMS Notification",
+				icon: <GoKey className="fs-6" />
+			},
+			{
+				title: "WooCommerce SMS Notification",
+				icon: <GoKey className="fs-6" />
+			},
+			{
+				title: "Ultimate Member Password Reset Over OTP",
+				icon: <GoKey className="fs-6" />
+			},
+			{
+				title: "Ultimate Member Password Reset Over OTP",
+				icon: <GoKey className="fs-6" />
+			}
+		]
+	}
+
+	return (
     <>
-      <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Generated by create next app" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main className={`${styles.main} ${inter.className} `}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.js</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+      <div className="container-fluid my-5">
+        <AddonSection addOnCardsData={addOnsIntegrationWithBadge} columns={3} cardType={cardType} />
+        {/* <AddonSection addOnCardsData={addOnsIntegrationWithIcons} columns={3} cardType={cardType} /> */}
+        {/* <AddonSection addOnCardsData={addOnsIntegrationWithNoPrice} columns={3} cardType={cardType} extraAddons={extraAddons} /> */}
+      </div>
+      
+      <div className="container-fluid my-5">
+        <UniqueSolutions uniqueSolutionItems={uniqueSolutionItems} />
+      </div>
+      
+      <div className="container-fluid my-5">
+        <TrialForm />
+      </div>
     </>
-  )
+
+	)
 }
