@@ -3,7 +3,7 @@
 }
 .bottomCardsSection{
     color : rgba(115, 115, 115, 1);
-    width : 600px;
+    height: 90%;
 }
 .bottomDiv{
     overflow: auto;
@@ -11,11 +11,11 @@
     scrollbar-width: none;
 }
 .bottomDiv .bottomCardsSection:first-child {
-    margin-left: auto !important;
+    margin-left: 0% !important;
 }
 
 .bottomDiv .bottomCardsSection:last-child {
-    margin-right: auto !important;
+    margin-right: 3rem !important;
 }
 .bottomDiv::-webkit-scrollbar{
     display: none;
@@ -36,13 +36,22 @@
 .reviewCardColumn{
     border: 1px solid rgba(63, 61, 86, 0.5);
     border-radius: 8px;
+    height: 100%;
 }
 .topReviewSection::-webkit-scrollbar{
     display: none;
 }
 .topReviewSection .reviewCardColumn:first-child{
-    margin-left: auto !important;
+    margin-left: 0% !important;
 }
 .topReviewSection .reviewCardColumn:last-child{
-    margin-right: auto ;
+    margin-right: 3rem !important ;
+}
+.arrowButton{
+    background:white !important;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    &::before{
+        color: black !important;
+        font-weight: 600;
+    }
 }

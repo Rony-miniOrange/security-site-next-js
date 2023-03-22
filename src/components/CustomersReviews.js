@@ -2,6 +2,8 @@ import { useState,useEffect } from "react";
 import Image from "next/image";
 import {GetRating} from "@/components/CustomersTestinomials";
 import CustomerReviewsCss from "./CustomerReviewsCss.module.scss";
+import Carousel from 'react-multi-carousel';
+import "react-multi-carousel/lib/styles.css";
 const CustomersReviews = (props) =>{
     const [reviewCards, setReviewCards] = useState(null);
     const [customerComments, setCustomerComments] = useState(null);
@@ -9,13 +11,57 @@ const CustomersReviews = (props) =>{
         setReviewCards(props.CustomersReviewData.customer_reviews_cards);
         setCustomerComments(props.CustomersReviewData.customer_comments);
     },[]);
+    const CustomRightArrow = ({ onClick, ...rest }) => {
+        return <button aria-label="Go to next slide" className={`${CustomerReviewsCss.arrowButton} react-multiple-carousel__arrow react-multiple-carousel__arrow--right`} type="button" onClick={() => onClick()} />;
+      };
+    const CustomLeftArrow = ({ onClick, ...rest }) => {
+        return <button aria-label="Go to previous slide" className={`${CustomerReviewsCss.arrowButton} react-multiple-carousel__arrow react-multiple-carousel__arrow--left`} type="button" onClick={() => onClick()} />;
+    };
     return (
-        <div className="container-fluid my-5 px-5">
-            <div className={`${CustomerReviewsCss.topReviewSection} row d-flex col-lg-12 pt-4 justify-content-between flex-nowrap mx-3`}>
+        <div className="container-fluid my-5 px-5"> 
+            <div className={`${CustomerReviewsCss.topReviewSection} row d-flex col-lg-12 pt-4 px-4 mx-0 justify-content-between flex-nowrap scrollable-container`}>
+            {reviewCards && <Carousel 
+                responsive={{
+                    desktop: {
+                    breakpoint: {
+                        max: 3000,
+                        min: 1024
+                    },
+                    items: 3.5,
+                    partialVisibilityGutter: 20 
+                    },
+                    mobile: {
+                    breakpoint: {
+                        max: 464,
+                        min: 0
+                    },
+                    items: 1,
+                    partialVisibilityGutter: 30
+                    },
+                    tablet: {
+                    breakpoint: {
+                        max: 1024,
+                        min: 464
+                    },
+                    items: 2,
+                    partialVisibilityGutter: 30
+                    }
+                }}
+                rewind={false}
+                rewindWithAnimation={false}
+                rtl={false}
+                shouldResetAutoplay
+                showDots={false}
+                sliderClass=""
+                slidesToSlide={1}
+                swipeable
+                customRightArrow={<CustomRightArrow />}
+                customLeftArrow={<CustomLeftArrow />}
+                >
             {
-                reviewCards && reviewCards.map((reviewCard)=> {
+                reviewCards && reviewCards.map((reviewCard,i)=> {
                 return(
-                <div className = {`${CustomerReviewsCss.reviewCardColumn} col-lg-3 mx-4 py-4`}>
+                <div className = {`${CustomerReviewsCss.reviewCardColumn}  mx-5 py-4 px-3`}>
                     {reviewCard.logo &&
                     <div className="image">
                         <Image src ={reviewCard.logo} alt = "image" width={110} height={60}/>
@@ -66,12 +112,51 @@ const CustomersReviews = (props) =>{
                 )
                 })
             }
+            </Carousel>}
             </div>
-            <div className={`${CustomerReviewsCss.bottomDiv} row d-flex my-5 flex-nowrap mx-3`}>
+            <div className={`${CustomerReviewsCss.bottomDiv} row d-flex mt-5 flex-nowrap mx-3`}>
+                {customerComments &&<Carousel 
+                responsive={{
+                    desktop: {
+                    breakpoint: {
+                        max: 3000,
+                        min: 1024
+                    },
+                    items: 2.5,
+                    partialVisibilityGutter: 50
+                    },
+                    mobile: {
+                    breakpoint: {
+                        max: 464,
+                        min: 0
+                    },
+                    items: 1,
+                    partialVisibilityGutter: 30
+                    },
+                    tablet: {
+                    breakpoint: {
+                        max: 1024,
+                        min: 464
+                    },
+                    items: 1,
+                    partialVisibilityGutter: 30
+                    }
+                }}
+                rewind={false}
+                rewindWithAnimation={false}
+                rtl={false}
+                shouldResetAutoplay
+                showDots={false}
+                sliderClass=""
+                slidesToSlide={1}
+                swipeable
+                customRightArrow={<CustomRightArrow />}
+                customLeftArrow={<CustomLeftArrow />}
+                > 
                 {
-                    customerComments && customerComments.map((commentcard)=>{
+                    customerComments && customerComments.map((commentcard,i)=>{
                         return(
-                            <div className={`${CustomerReviewsCss.bottomCardsSection} border rounded text-center mx-4`} >
+                            <div className={`${CustomerReviewsCss.bottomCardsSection} border rounded text-center mx-1`} >
                                 <div className="mx-2 py-5 px-4">
                                     <p className="fw-bold">"{commentcard.title}"</p>
                                     <p>{commentcard.comments}</p> 
@@ -85,6 +170,7 @@ const CustomersReviews = (props) =>{
                         )
                     })
                 }
+                </Carousel>}
             </div>
         </div>
     )
