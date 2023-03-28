@@ -1,0 +1,57 @@
+.commentcardname{
+    color:#252B42;
+}
+.bottomCardsSection{
+    color : rgba(115, 115, 115, 1);
+    height: 90%;
+}
+.bottomDiv{
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.bottomDiv .bottomCardsSection:first-child {
+    margin-left: 0% !important;
+}
+
+.bottomDiv .bottomCardsSection:last-child {
+    margin-right: 3rem !important;
+}
+.bottomDiv::-webkit-scrollbar{
+    display: none;
+}
+.topReviewCardTag{
+    color:#808191;
+    font-size: 0.8rem;
+}
+.mediaCard{
+    box-shadow:0px 2px 1px rgba(0, 0, 0, 0.05), 0px 0px 1px rgba(0, 0, 0, 0.25);
+    width: auto;
+}
+.topReviewSection{
+    overflow : auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.reviewCardColumn{
+    border: 1px solid rgba(63, 61, 86, 0.5);
+    border-radius: 8px;
+    height: 100%;
+}
+.topReviewSection::-webkit-scrollbar{
+    display: none;
+}
+.topReviewSection .reviewCardColumn:first-child{
+    margin-left: 0% !important;
+}
+.topReviewSection .reviewCardColumn:last-child{
+    margin-right: 3rem !important ;
+}
+.arrowButton{
+    background:white !important;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    &::before{
+        color: black !important;
+        font-weight: 600;
+    }
+}
