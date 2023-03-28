@@ -8,8 +8,8 @@ const CustomersReviews = (props) =>{
     const [reviewCards, setReviewCards] = useState(null);
     const [customerComments, setCustomerComments] = useState(null);
     useEffect(()=>{
-        setReviewCards(props.CustomersReviewData.customer_reviews_cards);
-        setCustomerComments(props.CustomersReviewData.customer_comments);
+        setReviewCards(props.customersReviewData.customer_reviews_cards);
+        setCustomerComments(props.customersReviewData.customer_comments);
     },[]);
     const CustomRightArrow = ({ onClick, ...rest }) => {
         return <button aria-label="Go to next slide" className={`${CustomerReviewsCss.arrowButton} react-multiple-carousel__arrow react-multiple-carousel__arrow--right`} type="button" onClick={() => onClick()} />;
