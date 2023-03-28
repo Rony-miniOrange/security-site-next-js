@@ -7,7 +7,8 @@ import AddonSection from "../components/AddonSection";
 import { BsFillCheckCircleFill } from 'react-icons/bs'
 import Single from "../components/PricingComponent/Single";
 import Multiple from "../components/PricingComponent/Multiple";
-import FaqSection from '@/components/FaqSection';
+import FaqSection from '../components/FaqSection';
+import DownloadSection from '../components/DownloadSection';
 
 // const inter = Inter({ subsets: ['latin'] });
 const inter = DM_Sans({ subsets: ['latin'], weight: ['400'] });
@@ -597,6 +598,25 @@ export default function Home() {
     setActivetab(id);
   };
 
+  const downloadSection = [
+    {
+      sectionValue: <b>5000 <span className='text-primary'>+</span></b>,
+      sectionTitle: "Downloads"
+    },
+    {
+      sectionValue: <b>5000 <span className='text-primary'>+</span></b>,
+      sectionTitle: "Active Installs"
+    },
+    {
+      sectionValue: <b>9000 <span className='text-primary'>+</span></b>,
+      sectionTitle: "Ratings"
+    },
+    {
+      sectionValue: <b>24 <span className='text-primary'>x</span> 7</b>,
+      sectionTitle: "Worldwide Support"
+    },
+  ]
+
   return (
     <>
 
@@ -646,6 +666,10 @@ export default function Home() {
       {/* FAQ SECTION */}
 
       <FaqSection faqs={tabs} />
+
+      {/* DOWNLOADS SECTION */}
+      <DownloadSection downloadSection={downloadSection} />
+
     </>
 
   )
